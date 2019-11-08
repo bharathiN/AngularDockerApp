@@ -1,45 +1,57 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Angular-Getting Started
+Materials for the ["Angular: Getting Started"](http://bit.ly/Angular-GettingStarted) course on Pluralsight.
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+`APM-Start`: The starter files set up for use in VSCode, WebStorm, or other editors. **Use this to code along with the course**. (Updated for <i>Angular version 8 or higher</i>)
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+`APM-Final`: The completed files. Use this to see the completed solution from the course. (Updated for <i>Angular version 8 or higher</i>)
 
----
+See the `README.md` file under each folder for details on installing and running the application.
 
-## Edit a file
+If you have any problems installing or running this code, please see the ["Angular: Getting Started Problem Solver"](http://blogs.msmvps.com/deborahk/angular-2-getting-started-problem-solver/)
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+If that does not resolve your issue, please post to the [discussion board for the course](https://app.pluralsight.com/library/courses/angular-2-getting-started-update/discussion)
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+NOTE: The installation was tested using node v10.16.0 and npm 6.9.0.
 
----
+## INSTALLING THE CODE
 
-## Create a file
+The following are detailed instructions for installing the code so you can code along with the course.
 
-Next, you’ll add a new file to this repository.
+0) Ensure you have node installed.
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+   At a command prompty, type `node -v` to ensure you have version `10.16.0` or higher before proceeding.
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+1) Download or clone the code from this repository.
 
----
+   If you download as a zip file, be sure to unzip it.
 
-## Clone a repository
+2) Navigate to the APM-Start folder (or APM folder if you renamed it).
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+   There should be a package.json file in this folder.
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+3) In a command window (or the Command prompt in VS Code), type `npm install`.
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+   This creates a node_modules folder and installs all packages from the package.json file into that folder. You may see a few warnings during this process, but you should not see any errors.
+   
+4) In the same command window (or the Command property in VS Code), type `npm start`.
+
+   The application should then compile and launch in your default browser.
+   
+If these steps don't work for you, see STACKBLITZ below.
+
+## STACKBLITZ
+
+If you want to work through the course without downloading npm or any of the libraries, try the course with Stackblitz by following this link: https://stackblitz.com/github/DeborahK/Angular-GettingStarted/tree/master/APM-Start
+
+Stackblitz does not support reading json files from a folder defined in the angular.json file. Rather, you need to copy the products folder from the api folder to the assets folder. Then modify the productUrl to look in the assets folder: private productUrl = 'assets/products/products.json';
+
+To install packages in Stackblitz, such as bootstrap and font-awesome, you need to use the DEPENDENCIES branch in the Project hierarchy to the left of the code in Stackblitz:
+1) Open the DEPENDENCIES node. (You should see the list of existing dependencies such as @angular/common
+2) Below the list of dependencies is an input box with the text "enter package name"
+3) Enter bootstrap there and press enter.
+4) If it asks you to install missing dependencies, click "INSTALL MISSING DEPENDENCIES"
+5) Repeat step 3 with font-awesome
+
+Stackblitz does not seem to recognize the Font Awesome icons. So you will instead see portions of squares.
+
+Stackbliz has the Angular CLI commands built in. Instead of installing the Angular CLI to your system, right-click on a folder in Stackblitz and you'll see an "Angular Generator" option. Under that menu you'll find the Angular CLI commands.
